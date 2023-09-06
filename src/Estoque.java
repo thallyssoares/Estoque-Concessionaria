@@ -1,16 +1,17 @@
 public class Estoque {
-    Carro[] carro;
-    int quantidade;
-
+    private Carro[] carro;
+    private int quantidade;
+    private boolean vendaRealizada=true;
     public Estoque(Carro[] carro, int quantidade){
         this.carro = carro;
         this.quantidade = quantidade;
     }
-    public void darSaida(int quantidadeSaida){
-        if(quantidadeSaida < this.quantidade){
-            System.out.println("Quantidade menor do que a do estoque.");
+    public boolean darSaida(int quantidadeSaida){
+        if(quantidadeSaida > this.quantidade){
+            return vendaRealizada=false;
         }
         this.quantidade = quantidadeSaida;
+        return vendaRealizada;
     }
     public void consultarEstoque(){
         for(int i=0; i< carro.length;i++){
