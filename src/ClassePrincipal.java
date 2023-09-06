@@ -5,8 +5,9 @@ public class ClassePrincipal {
         Carro carro2 = new Carro.BuilderCarro().setMarca("Volkswagen").setModelo("Fusca").setAno(2016).setCapTanque(30).setNumPassageiros(4).setValor(25000).build();
         Carro[] carros = {carro1, carro2};
         Estoque estoque1 = new Estoque(carros, 3);
-        estoque1.consultarEstoque();
-
+        Vendedor vendedor1 = new Vendedor.BuilderVendedor().setNome("Lucas").setSobrenome("Silva").setMatricula(5234).build();
+        Venda venda1 = new Venda.BuilderVenda().setVendedor(vendedor1).setCliente(cliente1).setCarro(carro2).setQuantidade(2).setEstoque(estoque1).build();
+        venda1.vender();
 
     }
 }
