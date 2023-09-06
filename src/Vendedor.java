@@ -2,13 +2,11 @@ public class Vendedor {
     private String nome;
     private String sobrenome;
     private int matricula;
-    private double comissao;
     private double salario = 1500;
-    private Vendedor(String nome, String sobrenome, int matricula, double comissao){
+    private Vendedor(String nome, String sobrenome, int matricula){
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.matricula = matricula;
-        this.comissao = comissao;
     }
     public static class BuilderVendedor{
         private String nome;
@@ -28,13 +26,10 @@ public class Vendedor {
             this.matricula = matricula;
             return this;
         }
-        public BuilderVendedor setComissao(double comissao){
-            this.comissao = comissao;
-            return this;
-        }
+
 
         public Vendedor build(){
-            return new Vendedor(nome, sobrenome, matricula, comissao);
+            return new Vendedor(nome, sobrenome, matricula);
         }
     }
 
@@ -51,8 +46,8 @@ public class Vendedor {
     public double getSalario(){
         return this.salario;
     }
-    public double calcularSalario(){
-        this.salario += this.comissao;
+    public double calcularSalario(double comissao){
+        this.salario += comissao;
         return this.salario;
     }
 }
