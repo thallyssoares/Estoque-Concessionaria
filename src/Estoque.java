@@ -1,10 +1,11 @@
 public class Estoque {
     private Carro[] carro;
     private int quantidade;
-    private boolean vendaRealizada=true;
+    private boolean vendaRealizada;
     public Estoque(Carro[] carro, int quantidade){
         this.carro = carro;
         this.quantidade = quantidade;
+        this.vendaRealizada=true;
     }
     public boolean darSaida(int quantidadeSaida){
         if(quantidadeSaida > this.quantidade){

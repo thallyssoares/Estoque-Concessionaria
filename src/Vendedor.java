@@ -2,17 +2,17 @@ public class Vendedor {
     private String nome;
     private String sobrenome;
     private int matricula;
-    private double salario = 1500;
+    private double salario;
     private Vendedor(String nome, String sobrenome, int matricula){
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.matricula = matricula;
+        this.salario = 1500;
     }
     public static class BuilderVendedor{
         private String nome;
         private String sobrenome;
         private int matricula;
-        private double comissao;
 
         public BuilderVendedor setNome(String nome){
             this.nome = nome;
